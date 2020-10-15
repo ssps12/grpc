@@ -9,10 +9,23 @@ jobs:
       group: edge
       arch: arm64-graviton2
       virt: vm
+      python: "3.6"
+    - os: linux
+      dist: focal
+      group: edge
+      arch: arm64-graviton2
+      virt: vm
+      python: "3.7"
+    - os: linux
+      dist: focal
+      group: edge
+      arch: arm64-graviton2
+      python: "3.8"
+      virt: vm
 before_install:
   # Until Travis upgrades from Cocoapods 0.39, we need to do it here.
   - export REPO_ROOT=grpc
-  - git clone -b RELEASE_TAG_HERE https://github.com/grpc/grpc $REPO_ROOT
+  - git clone https://github.com/grpc/grpc $REPO_ROOT
   - cd $REPO_ROOT
   - git submodule update --init
   - pip install -r requirements.txt
