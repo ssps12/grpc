@@ -2,6 +2,7 @@ git:
   depth: 1
 language: objective-c
 os: linux
+arch: arm64-graviton2
 env:
   global:
     - CONFIG=opt
