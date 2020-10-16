@@ -27,55 +27,7 @@ env:
       python: "3.8"
       language: python
       virt: vm
-    - SCHEME: "RxLibraryUnitTests"
-      WORKSPACE: "Tests.xcworkspace" TEST_PATH="src/objective-c/tests" BUILD_ONLY="false"
-      INTEROP_SERVER: "false"
-      language: objective-c
-      osx_image: xcode7.3
-    - SCHEME: "InteropTestsLocalSSL"
-      WORKSPACE: "Tests.xcworkspace" TEST_PATH="src/objective-c/tests" BUILD_ONLY="false"
-      INTEROP_SERVER: "true"
-      language: objective-c
-      osx_image: xcode7.3
-    - SCHEME: "InteropTestsLocalCleartext"
-      WORKSPACE: "Tests.xcworkspace" TEST_PATH="src/objective-c/tests"  BUILD_ONLY="false"
-      INTEROP_SERVER: "true"
-      language: objective-c
-      osx_image: xcode7.3
-    # TODO(jcanizales): Make tests an app project (instead of library), so the following will work.
-    # - SCHEME="InteropTestsRemote"
-    #   WORKSPACE="Tests.xcworkspace" TEST_PATH="src/objective-c/tests" BUILD_ONLY="false"
-    #   INTEROP_SERVER="true"
-    - SCHEME: "HelloWorld"
-      WORKSPACE: "HelloWorld.xcworkspace" TEST_PATH="examples/objective-c/helloworld"
-      BUILD_ONLY: "true" INTEROP_SERVER="false"
-      language: objective-c
-      osx_image: xcode7.3
-    - SCHEME: "RouteGuideClient"
-      WORKSPACE: "RouteGuideClient.xcworkspace" TEST_PATH="examples/objective-c/route_guide"
-      BUILD_ONLY: "true" INTEROP_SERVER="false"
-      language: objective-c
-      osx_image: xcode7.3
-    - SCHEME: "AuthSample"
-      WORKSPACE: "AuthSample.xcworkspace" TEST_PATH="examples/objective-c/auth_sample"
-      BUILD_ONLY: "true" INTEROP_SERVER="false"
-      language: objective-c
-      osx_image: xcode7.3
-    - SCHEME: "Sample"
-      WORKSPACE: "Sample.xcworkspace" TEST_PATH="src/objective-c/examples/Sample" BUILD_ONLY="true"
-      INTEROP_SERVER: "false"
-      language: objective-c
-      osx_image: xcode7.3
-    - SCHEME: "Sample"
-      WORKSPACE: "Sample.xcworkspace" TEST_PATH="src/objective-c/examples/Sample" BUILD_ONLY="true"
-      INTEROP_SERVER: "false" FRAMEWORKS="YES"
-      language: objective-c
-      osx_image: xcode7.3
-    - SCHEME: "SwiftSample"
-      WORKSPACE: "SwiftSample.xcworkspace" TEST_PATH="src/objective-c/examples/SwiftSample"
-      BUILD_ONLY: "true" INTEROP_SERVER="false"
-      language: objective-c
-      osx_image: xcode7.3
+    
 before_install:
   # Until Travis upgrades from Cocoapods 0.39, we need to do it here.
   - if [ "${TRAVIS_CPU_ARCH}" = "arm64" ]; then
